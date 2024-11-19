@@ -3,18 +3,16 @@ package com.cda.cda.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
-public class Noticia {
+public class Servico {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String titulo;
@@ -22,7 +20,9 @@ public class Noticia {
     @Column(columnDefinition = "TEXT")
     private String texto;
 
-    private LocalDateTime data_publicacao;
+    private Float valor;
+
+    private Integer tempo_realizacao;
 
     private String imagemUrl;
 
@@ -38,8 +38,12 @@ public class Noticia {
         return texto;
     }
 
-    public LocalDateTime getData_publicacao() {
-        return data_publicacao;
+    public Float getValor() {
+        return valor;
+    }
+
+    public Integer getTempo_realizacao() {
+        return tempo_realizacao;
     }
 
     public String getImagemUrl() {
@@ -58,8 +62,12 @@ public class Noticia {
         this.texto = texto;
     }
 
-    public void setData_publicacao(LocalDateTime data_publicacao) {
-        this.data_publicacao = data_publicacao;
+    public void setValor(Float valor) {
+        this.valor = valor;
+    }
+
+    public void setTempo_realizacao(Integer tempo_realizacao) {
+        this.tempo_realizacao = tempo_realizacao;
     }
 
     public void setImagemUrl(String imagemUrl) {
