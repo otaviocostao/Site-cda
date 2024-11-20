@@ -20,7 +20,7 @@ public class AssociadoAdminController {
     @Autowired
     AssociadoService associadoService;
 
-    @GetMapping
+    @GetMapping("/lista")
     public String listarAssociados(Model model){
         List<Associado> associados = associadoService.findAll();
         model.addAttribute("associados", associados);
@@ -36,6 +36,7 @@ public class AssociadoAdminController {
     @PostMapping("/salvarAssociado")
     public String salvarAssociado(@ModelAttribute("associado") Associado associado){
         associadoService.saveAssociado(associado);
-        return "redirect:/admin/associados";
+        return "redirect:/admin/associados/lista";
     }
+    
 }

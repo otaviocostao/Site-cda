@@ -18,8 +18,8 @@ public class AssociadoService {
         this.associadoRepository = associadoRepository;
     }
 
-    public Associado saveAssociado(Associado associado){
-        return associadoRepository.save(associado);
+    public void saveAssociado(Associado associado){
+        associadoRepository.save(associado);
     }
 
     public List<Associado> findAll(){

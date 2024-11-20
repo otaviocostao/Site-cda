@@ -101,4 +101,5 @@ a{
 #btn-back{
     width: 35px;
     margin-right: 5px;
+    cursor:pointer;
 }
