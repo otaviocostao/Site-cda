@@ -35,5 +35,5 @@ public class ServicoService {
     public void deleteServico(Long id){
         servicoRepository.deleteById(id);
     }
-    
+
 }

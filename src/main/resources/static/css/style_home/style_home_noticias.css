@@ -1,0 +1,113 @@
+#container-noticias {
+    width: 100%;
+    padding: 20px 0; /* padding ao invés de definir 100vh para evitar rolagem vertical desnecessária */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 120px; 
+}
+
+#area-noticias {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* permite que os elementos fiquem responsivos em telas menores */
+}
+
+#noticia-maior {
+    width: 45%;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+#noticia-maior:hover {
+    transform: scale(1.02); /* efeito de leve aumento ao passar o mouse */
+}
+
+#img-noticia-maior {
+    width: 100%;
+    height: auto; /* garante que a imagem mantenha a proporção */
+    border-radius: 10px;
+}
+
+#titulo-noticia-maior {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* fundo semitransparente */
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centraliza o título horizontalmente */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 10%; /* altura para alinhar o texto */
+    cursor: pointer;
+    font-size: 11pt;
+}
+
+
+#titulo-noticia-maior h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#group-noticias {
+    display: flex;
+    width: 35%; /* ajustado para caber ao lado de #noticia-maior */
+    gap: 20px;
+
+}
+
+#noticias-menores {
+    display: flex;
+    flex-direction: column; /* organiza as notícias em coluna */
+    gap: 20px; /* adiciona espaço entre as notícias menores */
+}
+
+
+.noticia-menor {
+    width: 100%;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.noticia-menor:hover {
+    transform: scale(1.02);
+}
+
+.img-noticia-menor {
+    width: 100%;
+    height: auto;
+}
+
+.texto-noticia-menor {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height:35%;
+    cursor: pointer;
+    font-size: 8pt;
+}

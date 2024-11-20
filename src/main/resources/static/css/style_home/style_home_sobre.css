@@ -1,0 +1,33 @@
+
+#container-sobre{
+    width: 100%;
+    height: 90vh;
+}
+
+
+#texto-imagem{
+    width: 100vw;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#texto-sobre{
+	font-size:12px ;
+    width: 35vw;
+    height: 35vw;
+    padding: 10px;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px 0px #8b8b8b80;
+    margin-right: 20px;
+}
+
+#img-cda{
+    height: 36vw;
+    border-radius: 10px;
+    box-shadow: 0px 3px 5px 0px #8b8b8b80;
+    margin-left: 20px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/css/style_admin/style_novo_associado.css">
+    <title>Cadastrar associado</title>
+</head>
+<body>
+    <div id="content-main">
+        <div  id="header-pag"><a href="admin_home.html"><img src="static/img/icons/Back.png" alt="" id="btn-back"></a><h2>CADASTRAR ASSOCIADO</h2></div>
+        <div id="area-formulario">
+            <form method="post">
+                <div class="text-field">
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" name="cnpj" id="cnpj" class="campo-pequeno">
+                </div>
+                <div class="text-field">
+                    <label for="razao-social">Razão social:</label>
+                    <input type="text" name="razao-social" id="razao-social" class="campo-medio">
+                </div>
+                <div class="text-field">
+                    <label for="localizacao">Localização:</label>
+                    <input type="text" name="localizacao" id="localizacao" class="campo-medio">
+                </div>
+                <div class="text-field">
+                    <label for="presidente">Presidente:</label>
+                    <input type="text" name="presidente" id="presidente" class  ="campo-medio">
+                </div>
+                <div class="text-field">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" name="telefone" id="telefone" class  ="campo-pequeno">
+                </div>
+                <div class="text-field">
+                    <label for="observacoes">Observações:</label>
+                    <input type="text" name="observacoes" id="observacoes" class="campo-grande">
+                </div>
+
+                <div class="text-field">
+                    <p>Imagem: </p>
+                    <button id="btn-add">Adicionar imagem</button>
+                </div>
+                <div id="area-btn-salvar">
+                    <button id="btn-salvar">Publicar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

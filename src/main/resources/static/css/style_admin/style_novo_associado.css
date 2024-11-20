@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content-main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header-pag{
+    width: 90%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+
+#btn-back{
+    width: 35px;
+    margin-right: 5px;
+}
+
+
+#area-formulario{
+    width: 90%;
+    height: 50%;
+
+}
+
+.text-field{
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #696969;
+}
+
+.campo-pequeno{
+    width: 10vw;
+    padding: 6px;
+    border: solid 1px #999999;
+    box-shadow: 0px 1px 1px 0px #898989;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.campo-medio{
+    width: 40vw;
+    padding: 6px;
+    border: solid 1px #999999;
+    box-shadow: 0px 1px 1px 0px #898989;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.campo-grande{
+    width: 90%;
+    padding: 6px;
+    border: solid 1px #999999;
+    box-shadow: 0px 1px 1px 0px #898989;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.data-publicacao{
+    width: 12vw;
+    padding: 6px;
+    border: solid 1px #999999;
+    box-shadow: 0px 1px 1px 0px #898989;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#texto-not{
+    width: 90%;
+    height: 60%;
+    padding: 6px;
+    border: solid 1px #999999;
+    box-shadow: 0px 1px 1px 0px #898989;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#area-btn-salvar{
+    width: 90%;
+    height: 20%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#btn-salvar{
+    width: 120px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px 0px #898989;
+    font-size: 11pt;
+    background-color: #0b9033;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+#btn-salvar:hover{
+    background-color: #34a155;
+}
+
+#btn-add{
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px 0px #898989;
+    font-size: 11pt;
+    background-color: #0b9033;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+#btn-add:hover{
+    background-color: #34a155;
+}

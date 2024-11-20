@@ -1,0 +1,32 @@
+header{
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    top: 0;
+}
+
+#logo-cda{
+    width: 73px;
+    margin-left: 15px
+}
+
+#botoes-navbar{
+    margin-right: 20px;
+}
+
+.btn-navbar{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 12pt;
+}
+
+.btn-navbar:hover{
+    background-color: #ffffff2d;
+}

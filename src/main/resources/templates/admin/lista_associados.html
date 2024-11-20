@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_listar_noticias.css}">
+    <title>Lista de associados</title>
+</head>
+<body>
+    <div id="content-main">
+        <div  id="header-pag"><a th:href="@{admin_home.html}"><img src="static/img/icons/Back.png" alt="" id="btn-back"></a><h2>Lista de associados</h2></div>
+        <div id="area-table">
+            <table class="striped-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>CNPJ</th>
+                        <th>Razão social</th>
+                        <th>Localização</th>
+                        <th>Presidente</th>
+                        <th>Telefone</th>
+                        <th>Observações</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="associado, iterStat : ${associados}">
+                    <td th:text="${associado.id}"></td>
+                    <td th:text="${associado.cnpj}"></td>
+                    <td th:text="${associado.razao_social}"></td>
+                    <td th:text="${associado.localizacao}"></td>
+                    <td th:text="${associado.presidente}"></td>
+                    <td th:text="${associado.telefone}"></td>
+                    <td th:text="${associado.observacoes}"></td>
+                    <td><a href=""><button class="editar">Editar</button></a></td>
+                    <td><button type="submit" class="deletar">Deletar</button></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
