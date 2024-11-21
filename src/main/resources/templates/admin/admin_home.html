@@ -5,34 +5,34 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="static/css/style_admin/style_home.css">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_home.css}">
     <title>Admin - Início</title>
 </head>
 <body>
     <div id="container-main">
         <div id="cabecalho-pag">
             <h1>CDA | ADMIN</h1>
-            <a href=""><button id="btn-desconectar">Desconectar <img id="icon-leave" src="static/img/icons/leave.png" alt=""></button></a>
+            <a href=""><button id="btn-desconectar">Desconectar <img id="icon-leave" th:src="@{/img/icons/leave.png}" alt=""></button></a>
             
         </div>
 
         <div class="group-funcoes">
             <div class="cabecalho-group"><h3>NOTÍCIAS</h3></div>
-            <div class="btn-funcao"><a href=""><img src="static/img/icons/Plus.png" alt="" class="icon-crud">Nova notícia</a></div>
-            <div class="btn-funcao"><a href=""> <img src="static/img/icons/Table.png" alt="" class="icon-crud"> Lista de notícias</a></div>
+            <div class="btn-funcao"><a th:href="@{/admin/novaNoticia}"><img th:src="@{/img/icons/Plus.png}" alt="" class="icon-crud">Nova notícia</a></div>
+            <div class="btn-funcao"><a th:href="@{/admin/listaNoticias}"> <img th:src="@{/img/icons/Table.png}" alt="" class="icon-crud"> Lista de notícias</a></div>
         
         </div>
 
         <div class="group-funcoes">
             <div class="cabecalho-group"><h3>PROJETOS</h3></div>
-            <div class="btn-funcao"><a href=""><img src="static/img/icons/Plus.png" alt="" class="icon-crud">Novo projeto</a></div>
-            <div class="btn-funcao"><a href=""> <img src="static/img/icons/Table.png" alt="" class="icon-crud"> Lista de projetos</a></div>
+            <div class="btn-funcao"><a href=""><img th:src="@{/img/icons/Plus.png}" alt="" class="icon-crud">Novo projeto</a></div>
+            <div class="btn-funcao"><a href=""> <img th:src="@{/img/icons/Table.png}" alt="" class="icon-crud"> Lista de projetos</a></div>
         </div>
 
         <div class="group-funcoes">
             <div class="cabecalho-group"><h3>ASSOCIADOS</h3></div>
-            <div class="btn-funcao"><a href=""><img src="static/img/icons/Plus.png" alt="" class="icon-crud">Novo associado</a></div>
-            <div class="btn-funcao"><a href=""> <img src="static/img/icons/Table.png" alt="" class="icon-crud"> Lista de associados</a></div>
+            <div class="btn-funcao"><a th:href="@{/admin/novoAssociado}"><img th:src="@{/img/icons/Plus.png}" alt="" class="icon-crud">Novo associado</a></div>
+            <div class="btn-funcao"><a th:href="@{/admin/listaAssociados}"> <img th:src="@{/img/icons/Table.png}" alt="" class="icon-crud"> Lista de associados</a></div>
         </div>
 
     </div>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_home/style_home_body.css}">
+    <link rel="stylesheet" th:href="@{/css/style_navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/style_home/style_home_sobre.css}">
+    <link rel="stylesheet" th:href="@{/css/style_home/style_home_projetos.css}">
+    <link rel="stylesheet" th:href="@{/css/style_home/style_home_noticias.css}">
+    <link rel="stylesheet" th:href="@{/css/style_rodape.css}">
+    <title>CDA - Ínicio</title>
+</head>
+<header >
+    <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
+    <div id="botoes-navbar">
+        <a href="#" class="btn-navbar">Início</a>
+        <a href="#" class="btn-navbar">Projetos</a>
+        <a href="#" class="btn-navbar">Notícias</a>
+        <a href="#" class="btn-navbar">Serviços</a>
+        <a href="#" class="btn-navbar">Afiliados</a>
+        <a href="#" class="btn-navbar">Apoiadores</a>
+    </div>
+</header>
+<body>
+<div id="container-main">
+    <section id="container-sobre">
+        <div class="titulo-pagina">
+            <h1>SOBRE A CDA</h1>
+        </div>
+        <div id="texto-imagem">
+            <p id="texto-sobre">
+                A CDA (Central das Associações de Araci) foi fundada em dezembro de 2000, a partir da união de 15 presidentes de diversas associações. A entidade nasceu com o propósito de promover uma gestão colaborativa e cooperativista, auxiliando qualquer associação comunitária, independente de afiliações políticas, sempre com o objetivo de melhorar a qualidade de vida das comunidades. Desde o início, a CDA enfrentou desafios financeiros significativos, já que suas receitas eram provenientes de contribuições mensais modestas, enquanto as despesas operacionais eram expressivas. No entanto, a central manteve seu compromisso de oferecer apoio técnico e operacional a todas as associações filiadas, funcionando de segunda a sexta-feira com plantões diários.<br>
+
+                A CDA se destacou por auxiliar as associações, especialmente na regularização da documentação legal. Muitas dessas entidades funcionavam na prática, mas não tinham a formalização jurídica necessária, correndo o risco de fechar após curtos períodos de atuação. A regularização permitiu que elas se tornassem mais fortes e atuantes em suas comunidades.<br>
+
+                Além da assistência técnica, a CDA ampliou seu campo de atuação ao identificar outras necessidades dos pequenos produtores rurais, como a dificuldade de acesso a vacinas para o gado. Percebendo essa carência, a central começou a adquirir vacinas a preços acessíveis e repassá-las aos pecuaristas de Araci, promovendo a cultura de vacinação na região, que até então era praticamente inexistente. Essa iniciativa impulsionou campanhas de vacinação e outras ações relevantes, gerando um impacto positivo que extrapolou as fronteiras do município e despertou o interesse de associações de outras cidades.<br>
+
+                No ano de 2002, a CDA ampliou seu escopo de atuação, voltando-se também para a agricultura. Com o apoio da EBDA (Empresa Baiana de Desenvolvimento Agrícola) e da prefeitura local, a entidade realizou um levantamento do potencial agrícola do município. A partir dos dados coletados, a CDA estruturou um programa de suporte ao desenvolvimento agrícola, que rapidamente trouxe resultados significativos, aumentando a produtividade e a qualidade das colheitas dos pequenos agricultores de Araci.<br>
+
+                A missão da CDA é clara: contribuir para a melhoria da qualidade de vida de seus associados e da sociedade em geral. A entidade se compromete a apoiar as associações no cumprimento de suas responsabilidades sociais, desenvolvendo programas e projetos com foco no desenvolvimento socioeconômico e na sustentabilidade ambiental. Através dessas iniciativas, a CDA se consolida como uma força motriz no progresso das comunidades que serve.
+            </p>
+            <img th:src="@{/img/imagem cda.jpeg}" alt="" id="img-cda">
+        </div>
+    </section>
+    <section id="container-projetos">
+        <div class="titulo-pagina">
+            <h1>NOSSOS PROJETOS</h1>
+        </div>
+        <div id="area-projetos">
+            <div class="card-projeto">
+                <img th:src="@{/img/maos-unidas.jpg}" alt="" class="img-projeto">
+                <h3>PROJETO MÃOS UNIDAS</h3>
+                <div class="area-btn-ver-projeto">
+                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
+                </div>
+            </div>
+            <div class="card-projeto">
+                <img th:src="@{/img/copa rural.jpg}" alt="" class="img-projeto">
+                <h3>PROJETO COPA RURAL</h3>
+                <div class="area-btn-ver-projeto">
+                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
+                </div>
+            </div>
+            <div class="card-projeto">
+                <img th:src="@{/img/multiroes de saude.jpg}" alt="" class="img-projeto">
+                <h3>MUTIRÕES DE SAÚDE</h3>
+                <div class="area-btn-ver-projeto">
+                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
+                </div>
+            </div>
+        </div>
+        <div id="area-btn-todos-projetos">
+            <a href=""><button id="btn-todos-projetos">Ver todos os projetos</button></a>
+        </div>
+    </section>
+    <section id="container-noticias">
+        <div class="titulo-pagina">
+            <h1>NOTÍCIAS RECENTES</h1>
+        </div>
+        <div id="area-noticias">
+            <div id="noticia-maior">
+                <img th:src="@{/img/noticia-copa-rural.jpg}" alt="" id="img-noticia-maior">
+                <div id="titulo-noticia-maior">
+                    <h3>Município de Araci é escolhido para sediar os jogos da Copa Baiana de Futebol 2024.</h3>
+                </div>
+            </div>
+            <div id="group-noticias">
+                <div class="noticias-menores">
+                    <div class="noticia-menor">
+                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
+
+                        </div>
+                    </div>
+                    <div class="noticia-menor">
+                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="noticias-menores">
+                    <div class="noticia-menor">
+                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
+
+                        </div>
+                    </div>
+                    <div class="noticia-menor">
+                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+<footer class="rodape">
+    <div id="content-rodape">
+        <div id="contatos-rodape">
+            <h4>Nosso contatos:</h4>
+            <p>toinhocda@gmail.com</p>
+            <p>(75) - 9.9921-6165</p>
+        </div>
+        <div id="endereco-rodape">
+            <h4>Nosso endereço:</h4>
+            <p>Praça do Tanque da <br>Nação, 230, Centro.<br> Araci-BA</p>
+        </div>
+        <div id="redes-rodape">
+            <h4>Nossas redes:</h4>
+            <a href="">WhatsApp</a><br>
+            <a href="">Instagram</a>
+        </div>
+    </div>
+    <div id="direitos-rodape">
+        © 2024 Central de Desenvolvimento de Associações de Araci-Ba CNPJ: 04231.921/0001-16 - Todos os direitos reservados.
+    </div>
+</footer>
+</body>
+</html>

@@ -19,6 +19,8 @@ public class Noticia {
 
     private String titulo;
 
+    private String autor;
+
     @Column(columnDefinition = "TEXT")
     private String texto;
 

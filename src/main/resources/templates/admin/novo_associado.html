@@ -10,9 +10,9 @@
 </head>
 <body>
     <div id="content-main">
-        <div  id="header-pag"><a><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back"></a><h2>CADASTRAR ASSOCIADO</h2></div>
+        <div  id="header-pag"><a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back"></a><h2>CADASTRAR ASSOCIADO</h2></div>
         <div id="area-formulario">
-            <form th:action="@{/admin/associados/salvarAssociado}" th:object="${associado}" method="post">
+            <form th:action="@{/admin/salvarAssociado}" th:object="${associado}" method="post">
                 <div class="text-field">
                     <label for="cnpj">CNPJ:</label>
                     <input type="text" name="cnpj" id="cnpj" class="campo-pequeno" th:field="*{cnpj}">

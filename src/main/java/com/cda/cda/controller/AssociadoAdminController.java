@@ -14,20 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/associados")
+@RequestMapping("/admin")
 public class AssociadoAdminController {
 
     @Autowired
     AssociadoService associadoService;
 
-    @GetMapping("/lista")
+    @GetMapping("/listaAssociados")
     public String listarAssociados(Model model){
         List<Associado> associados = associadoService.findAll();
         model.addAttribute("associados", associados);
         return "admin/lista_associados";
     }
 
-    @GetMapping("/novo")
+    @GetMapping("/novoAssociado")
     public String novoAssociado(Model model){
         model.addAttribute("associado", new Associado());
         return "admin/novo_associado";

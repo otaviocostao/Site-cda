@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_listar_noticias.css}">
+    <title>Lista de notícias</title>
+</head>
+<body>
+    <div id="content-main">
+        <div id="header-pag">
+            <a th:href="@{/admin/home}">
+                <img th:src="@{/img/icons/Back.png}" alt="" id="btn-back">
+            </a>
+            <h2>Lista de notícias publicadas</h2>
+        </div>
+
+        <div id="area-table">
+            <table class="striped-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Data de publicação</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="noticia : ${noticias}">
+                        <td th:text="${noticia.id}"></td>
+                        <td th:text="${noticia.titulo}"></td>
+                        <td th:text="${noticia.autor}"></td>
+                        <td th:text="${noticia.data_publicacao}"></td>
+                        <td><a><button class="editar">Editar</button></a></td>
+                        <td><button type="submit" class="deletar" >Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

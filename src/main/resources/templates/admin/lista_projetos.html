@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/static/css/style_admin/style_listar_noticias.css}">
+    <title>Lista de projetos</title>
+</head>
+<body>
+    <div id="content-main">
+        <!-- Usando th:href para navegação dinâmica -->
+        <div id="header-pag">
+            <a th:href="@{/admin_home}">
+                <img src="static/img/icons/Back.png" alt="" id="btn-back">
+            </a>
+            <h2>Lista de projetos publicados</h2>
+        </div>
+
+        <div id="area-table">
+            <table class="striped-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Data de publicação</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exemplo de iteração com Thymeleaf -->
+                    <tr th:each="projeto : ${projetos}">
+                        <td th:text="${projeto.id}"></td>
+                        <td th:text="${projeto.titulo}"></td>
+                        <td th:text="${projeto.autor}"></td>
+                        <td th:text="${projeto.dataPublicacao}"></td>
+                        <td><a th:href="@{/editar_projeto/{id}(id=${projeto.id})}"><button class="editar">Editar</button></a></td>
+                        <td><button type="submit" class="deletar" th:onclick="'deletarProjeto(' + ${projeto.id} + ') '">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -70,7 +70,7 @@
 
 }
 
-#noticias-menores {
+.noticias-menores {
     display: flex;
     flex-direction: column; /* organiza as notícias em coluna */
     gap: 20px; /* adiciona espaço entre as notícias menores */

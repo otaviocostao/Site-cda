@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_nova_noticia.css}">
+    <title>Publicar projeto</title>
+</head>
+<body>
+    <div id="content-main">
+        <div id="header-pag">
+            <a th:href="@{/admin_home}">
+                <img th:src="@{/img/icons/Back.png}" alt="" id="btn-back">
+            </a>
+            <h2>PUBLICAR PROJETO</h2>
+        </div>
+        <div id="area-formulario">
+            <form method="post" th:action="@{/publicarProjeto}">
+                <div class="text-field">
+                    <label for="titulo-proj">Título:</label>
+                    <input type="text" name="titulo-not" id="titulo-proj" class="campo-grande">
+                </div>
+                <div class="text-field">
+                    <label for="texto-proj">Texto:</label>
+                    <input type="text" name="texto-not" id="texto-proj" class="campo-grande">
+                </div>
+                <div class="text-field">
+                    <p>Imagem: </p>
+                    <button id="btn-add">Adicionar imagem</button>
+                </div>
+                <div id="area-btn-salvar">
+                    <button id="btn-salvar">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
