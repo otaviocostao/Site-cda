@@ -26,7 +26,8 @@ public class Noticia {
 
     private LocalDateTime data_publicacao;
 
-    private String imagemUrl;
+    @Column(name = "imagem_url")
+    private String imagem_url;
 
     public Long getId() {
         return id;
@@ -45,7 +46,7 @@ public class Noticia {
     }
 
     public String getImagemUrl() {
-        return imagemUrl;
+        return imagem_url;
     }
 
     public void setId(Long id) {
@@ -65,6 +66,6 @@ public class Noticia {
     }
 
     public void setImagemUrl(String imagemUrl) {
-        this.imagemUrl = imagemUrl;
+        this.imagem_url = imagemUrl;
     }
 }

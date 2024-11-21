@@ -1,5 +1,6 @@
 package com.cda.cda.controller;
 
+import com.cda.cda.model.Associado;
 import com.cda.cda.model.Noticia;
 import com.cda.cda.service.NoticiaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ import java.util.List;
 public class NoticiaAdminController {
 
     @Autowired
-    NoticiaService noticiaService;
+    private NoticiaService noticiaService;
 
     @GetMapping("/listaNoticias")
     public String listarNoticias(Model model){
@@ -30,7 +31,7 @@ public class NoticiaAdminController {
     }
 
     @GetMapping("/novaNoticia")
-    public String novaNoticia(Model model){
+    public String novaNoticia(Model model) {
         model.addAttribute("noticia", new Noticia());
         return "admin/nova_noticia";
     }
@@ -39,23 +40,32 @@ public class NoticiaAdminController {
     public String salvarNoticia(@ModelAttribute Noticia noticia,
                                 @RequestParam("imagem") MultipartFile imagem) throws IOException {
         if (!imagem.isEmpty()) {
-            String nomeArquivo = System.currentTimeMillis() + "_" + imagem.getOriginalFilename();
-            Path caminhoArquivo = Paths.get("uploads/" + nomeArquivo);
-            Files.createDirectories(caminhoArquivo.getParent());
-            Files.write(caminhoArquivo, imagem.getBytes());
+            // Define o diretório onde as imagens serão salvas
+            String diretorioImagens = "uploads/imagens/";
+            Path caminhoDiretorio = Paths.get(diretorioImagens);
 
-            noticia.setImagemUrl("/uploads/" + nomeArquivo);
+            // Cria o diretório se ele não existir
+            if (!Files.exists(caminhoDiretorio)) {
+                Files.createDirectories(caminhoDiretorio);
+            }
+
+            // Define o nome do arquivo e o caminho completo
+            String nomeArquivo = LocalDateTime.now().toString().replace(":", "-") + "-" + imagem.getOriginalFilename();
+            Path caminhoArquivo = caminhoDiretorio.resolve(nomeArquivo);
+
+            // Salva o arquivo no diretório
+            Files.copy(imagem.getInputStream(), caminhoArquivo);
+
+            // Salva o caminho do arquivo na entidade Noticia
+            noticia.setImagemUrl(caminhoArquivo.toString());
         }
+
         noticia.setData_publicacao(LocalDateTime.now());
+
+        // Salva a notícia no banco de dados
         noticiaService.saveNoticia(noticia);
-        return "redirect:/admin/noticias";
+
+        return "redirect:/admin/listaNoticias";
     }
 
-    @GetMapping("/visualizarNoticias/{id}")
-    public String visualizarNoticia(@PathVariable Long id, Model model) {
-        Noticia noticia = noticiaService.getById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Notícia não encontrada: " + id));
-        model.addAttribute("noticia", noticia);
-        return "noticias/detalhes";
-    }
 }

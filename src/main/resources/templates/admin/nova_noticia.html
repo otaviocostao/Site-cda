@@ -11,11 +11,11 @@
 <body>
     <div id="content-main">
         <div id="header-pag">
-            <a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back"></a>
+            <a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back" enctype="multipart/form-data"></a>
             <h2>PUBLICAR NOTÍCIA</h2>
         </div>
         <div id="area-formulario">
-            <form th:action="@{/admin/salvarNoticia}" th:object="${noticia}" method="post">
+            <form th:action="@{/admin/salvarNoticia}" th:object="${noticia}" method="post" enctype="multipart/form-data">
                 <div class="text-field">
                     <label for="titulo-not">Título:</label>
                     <input type="text" name="titulo-not" id="titulo-not" th:field="*{titulo}">
@@ -29,11 +29,6 @@
                 <div class="text-field">
                     <label for="texto-not">Texto:</label>
                     <input type="text" name="texto-not" id="texto-not" th:field="*{texto}">
-                </div>
-
-                <div class="text-field">
-                    <label for="data-publicacao">Data de publicação:</label>
-                    <input type="datetime-local" name="data-publicacao" id="data-publicacao" th:field="*{data_publicacao}" class="data-publicacao">
                 </div>
 
                 <label for="imagem">Imagem:</label>

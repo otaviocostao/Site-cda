@@ -36,7 +36,7 @@ public class AssociadoAdminController {
     @PostMapping("/salvarAssociado")
     public String salvarAssociado(@ModelAttribute("associado") Associado associado){
         associadoService.saveAssociado(associado);
-        return "redirect:/admin/associados/lista";
+        return "redirect:/admin/listaAssociados";
     }
     
 }
