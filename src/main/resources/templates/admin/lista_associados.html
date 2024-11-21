@@ -35,9 +35,9 @@
                     <td th:text="${associado.presidente}"></td>
                     <td th:text="${associado.telefone}"></td>
                     <td th:text="${associado.observacoes}"></td>
-                    <td><a th:href="@{/admin/editarAssociado}"><button class="editar">Editar</button></a></td>
+                    <td><a th:href="@{/admin/editarAssociado/{id}(id=${associado.id})}"><button class="editar">Editar</button></a></td>
                     <td><form th:action="@{/admin/deletarAssociado/{id}(id=${associado.id})}" method="post" style="display: inline;" class="form-delete">
-                        <button type="submit" class="deletar">Cancelar</button>
+                        <button type="submit" class="deletar">Excluir</button>
                     </form></td>
                 </tbody>
             </table>

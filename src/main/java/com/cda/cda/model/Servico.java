@@ -22,9 +22,7 @@ public class Servico {
 
     private Float valor;
 
-    private Integer tempo_realizacao;
-
-    private String imagemUrl;
+    private String tempo_realizacao;
 
     public Long getId() {
         return id;
@@ -42,13 +40,10 @@ public class Servico {
         return valor;
     }
 
-    public Integer getTempo_realizacao() {
+    public String getTempo_realizacao() {
         return tempo_realizacao;
     }
 
-    public String getImagemUrl() {
-        return imagemUrl;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -66,11 +61,8 @@ public class Servico {
         this.valor = valor;
     }
 
-    public void setTempo_realizacao(Integer tempo_realizacao) {
+    public void setTempo_realizacao(String tempo_realizacao) {
         this.tempo_realizacao = tempo_realizacao;
     }
 
-    public void setImagemUrl(String imagemUrl) {
-        this.imagemUrl = imagemUrl;
-    }
 }

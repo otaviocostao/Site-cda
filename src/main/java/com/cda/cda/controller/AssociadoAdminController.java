@@ -44,9 +44,10 @@ public class AssociadoAdminController {
     }
 
 
-    @GetMapping("/editarAssociado")
-    public String editarAssociado(Model model){
-        model.addAttribute("associado", new Associado());
+    @GetMapping("/editarAssociado/{id}")
+    public String editarAssociado(@PathVariable("id") Long id, Model model){
+        Associado associado = associadoService.getById(id).orElseThrow(() -> new RuntimeException("Associado não encontrado com ID: " + id));
+        model.addAttribute("associado", associado);
         return "admin/editar_associado";
     }
 

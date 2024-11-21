@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="content-main">
-    <!-- Cabeçalho -->
+
     <div id="header-pag">
         <a th:href="@{/admin/home}">
             <img th:src="@{/img/icons/Back.png}" alt="Voltar" id="btn-back">
@@ -16,45 +16,39 @@
         <h2>EDITAR ASSOCIADO</h2>
     </div>
 
-    <!-- Formulário de Edição -->
     <div id="area-formulario">
-        <form method="post" th:action="@{/admin/salvarEdicaoAssociado}">
-            <!-- Campo oculto para o ID -->
-            <input type="hidden" name="id" th:value="${associado.id}">
+        <form method="post" th:action="@{/admin/salvarEdicaoAssociado}" object="${associado}">
+
+            <input type="hidden" name="id" th:field="${associado.id}">
 
             <!-- Campos de Edição -->
             <div class="text-field">
                 <label for="cnpj">CNPJ:</label>
-                <input type="text" name="cnpj" id="cnpj" class="campo-pequeno" th:value="${associado.cnpj}" required>
+                <input type="text" name="cnpj" id="cnpj" class="campo-pequeno" th:field="*{associado.cnpj}" required>
             </div>
             <div class="text-field">
                 <label for="razao-social">Razão Social:</label>
-                <input type="text" name="razaoSocial" id="razao-social" class="campo-medio" th:value="${associado.razao_social}" required>
+                <input type="text" name="razaoSocial" id="razao-social" class="campo-medio" th:field="*{associado.razao_social}" required>
             </div>
             <div class="text-field">
                 <label for="localizacao">Localização:</label>
-                <input type="text" name="localizacao" id="localizacao" class="campo-medio" th:value="${associado.localizacao}">
+                <input type="text" name="localizacao" id="localizacao" class="campo-medio" th:field="*{associado.localizacao}">
             </div>
             <div class="text-field">
                 <label for="presidente">Presidente:</label>
-                <input type="text" name="presidente" id="presidente" class="campo-medio" th:value="${associado.presidente}">
+                <input type="text" name="presidente" id="presidente" class="campo-medio" th:field="*{associado.presidente}">
             </div>
             <div class="text-field">
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" class="campo-pequeno" th:value="${associado.telefone}">
+                <input type="text" name="telefone" id="telefone" class="campo-pequeno" th:field="*{associado.telefone}">
             </div>
             <div class="text-field">
                 <label for="observacoes">Observações:</label>
-                <input type="text" name="observacoes" id="observacoes" class="campo-grande" th:value="${associado.observacoes}">
+                <input type="text" name="observacoes" id="observacoes" class="campo-grande" th:field="*{associado.observacoes}">
             </div>
 
-            <!-- Botões -->
-            <div class="text-field">
-                <p>Imagem: </p>
-                <button id="btn-add" type="button">Alterar imagem</button>
-            </div>
             <div id="area-btn-salvar">
-                <button id="btn-salvar" type="submit">Salvar Alterações</button>
+                <button id="btn-salvar" type="submit">Salvar</button>
             </div>
         </form>
     </div>

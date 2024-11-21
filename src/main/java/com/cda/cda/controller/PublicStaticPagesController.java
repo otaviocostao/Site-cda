@@ -10,12 +10,9 @@ import java.util.List;
 
 @Controller
 public class PublicStaticPagesController {
-    NoticiaService noticiaService;
 
     @GetMapping("/home")
-    public String homePage(Model model){
-        List<Noticia> noticias = noticiaService.findAll();
-        model.addAttribute("noticias", noticias);
+    public String homePage(){
         return "home";
     }
 }
