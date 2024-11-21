@@ -15,10 +15,10 @@ public class NoticiaController {
     @Autowired
     NoticiaService noticiaService;
 
-    @GetMapping("/listarNoticias")
+    @GetMapping("/noticias")
     public String listaNoticias(Model model){
         List<Noticia> noticias = noticiaService.findAll();
         model.addAttribute("noticias", noticias);
-        return "/lista_noticias";
+        return "noticias";
     }
 }

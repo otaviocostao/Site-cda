@@ -31,6 +31,13 @@ body{
     justify-content: center;
 }
 
+.noticias-container{
+    width:100%;
+    display:flex;
+    align-items:start;
+    justify-content:center;
+}
+
 .modelo-noticias{
     width: 70%;
     height: 100%;

@@ -1,15 +1,11 @@
 package com.cda.cda.controller;
 
 import com.cda.cda.model.Associado;
-import com.cda.cda.model.Noticia;
 import com.cda.cda.service.AssociadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,7 +24,7 @@ public class AssociadoAdminController {
     }
 
     @GetMapping("/novoAssociado")
-    public String novoAssociado(Model model){
+    public String novoAssociado(Model model) {
         model.addAttribute("associado", new Associado());
         return "admin/novo_associado";
     }
@@ -38,5 +34,25 @@ public class AssociadoAdminController {
         associadoService.saveAssociado(associado);
         return "redirect:/admin/listaAssociados";
     }
-    
+
+
+    @PostMapping("/deletarAssociado/{id}")
+    public String deletarAssociado(@PathVariable("id") Long id){
+        associadoService.deleteAssociado(id);
+
+        return "redirect:/admin/listaAssociados";
+    }
+
+
+    @GetMapping("/editarAssociado")
+    public String editarAssociado(Model model){
+        model.addAttribute("associado", new Associado());
+        return "admin/editar_associado";
+    }
+
+    @PostMapping("/salvarEdicaoAssociado")
+    public String salvarEdicaoAssociado(@ModelAttribute("associado") Associado associado){
+        associadoService.saveAssociado(associado);
+        return "redirect:/admin/listaAssociados";
+    }
 }

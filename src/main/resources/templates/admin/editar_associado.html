@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_novo_associado.css}">
+    <title>Editar Associado</title>
+</head>
+<body>
+<div id="content-main">
+    <!-- Cabeçalho -->
+    <div id="header-pag">
+        <a th:href="@{/admin/home}">
+            <img th:src="@{/img/icons/Back.png}" alt="Voltar" id="btn-back">
+        </a>
+        <h2>EDITAR ASSOCIADO</h2>
+    </div>
+
+    <!-- Formulário de Edição -->
+    <div id="area-formulario">
+        <form method="post" th:action="@{/admin/salvarEdicaoAssociado}">
+            <!-- Campo oculto para o ID -->
+            <input type="hidden" name="id" th:value="${associado.id}">
+
+            <!-- Campos de Edição -->
+            <div class="text-field">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" name="cnpj" id="cnpj" class="campo-pequeno" th:value="${associado.cnpj}" required>
+            </div>
+            <div class="text-field">
+                <label for="razao-social">Razão Social:</label>
+                <input type="text" name="razaoSocial" id="razao-social" class="campo-medio" th:value="${associado.razao_social}" required>
+            </div>
+            <div class="text-field">
+                <label for="localizacao">Localização:</label>
+                <input type="text" name="localizacao" id="localizacao" class="campo-medio" th:value="${associado.localizacao}">
+            </div>
+            <div class="text-field">
+                <label for="presidente">Presidente:</label>
+                <input type="text" name="presidente" id="presidente" class="campo-medio" th:value="${associado.presidente}">
+            </div>
+            <div class="text-field">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="campo-pequeno" th:value="${associado.telefone}">
+            </div>
+            <div class="text-field">
+                <label for="observacoes">Observações:</label>
+                <input type="text" name="observacoes" id="observacoes" class="campo-grande" th:value="${associado.observacoes}">
+            </div>
+
+            <!-- Botões -->
+            <div class="text-field">
+                <p>Imagem: </p>
+                <button id="btn-add" type="button">Alterar imagem</button>
+            </div>
+            <div id="area-btn-salvar">
+                <button id="btn-salvar" type="submit">Salvar Alterações</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

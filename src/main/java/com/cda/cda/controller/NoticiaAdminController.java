@@ -68,4 +68,26 @@ public class NoticiaAdminController {
         return "redirect:/admin/listaNoticias";
     }
 
+
+    @PostMapping("/deletarNoticia/{id}")
+    public String deletarNoticia(@PathVariable("id") Long id){
+        Noticia noticia = noticiaService.getById(id).orElseThrow(() -> new RuntimeException("Noticia não encontrada com ID: " + id));;
+
+        if(noticia != null){
+            String imagem_url = noticia.getImagemUrl();
+            if(imagem_url!=null){
+                Path caminhoImagem = Paths.get(imagem_url);
+                try{
+                    Files.deleteIfExists(caminhoImagem);
+                } catch (IOException e) {
+                    System.out.println("Erro ao deletar a imagem: " + e.getMessage());
+                }
+            }
+        }
+
+        noticiaService.deleteNoticia(id);
+
+        return "redirect:/admin/listaNoticias";
+    }
+
 }

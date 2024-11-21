@@ -34,7 +34,9 @@
                         <td th:text="${noticia.autor}"></td>
                         <td th:text="${noticia.data_publicacao}"></td>
                         <td><a><button class="editar">Editar</button></a></td>
-                        <td><button type="submit" class="deletar" >Deletar</button></td>
+                        <td><form th:action="@{/admin/deletarNoticia/{id}(id=${noticia.id})}" method="post" style="display: inline;" class="form-delete">
+                            <button type="submit" class="deletar">Cancelar</button>
+                        </form></td>
                     </tr>
                 </tbody>
             </table>
