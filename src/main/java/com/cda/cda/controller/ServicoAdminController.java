@@ -32,7 +32,7 @@ public class ServicoAdminController {
     @PostMapping("/salvarServico")
     public String salvarServico(@ModelAttribute("servico") Servico servico){
         servicoService.saveServico(servico);
-        return "redirect:/admin/novoServico";
+        return "redirect:/admin/listaServicos";
     }
 
 

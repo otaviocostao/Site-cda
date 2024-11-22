@@ -30,7 +30,7 @@
                     <td th:text="${servico.titulo}"></td>
                     <td th:text="${servico.texto}"></td>
                     <td th:text="${servico.valor}"></td>
-                    <td th:text="${servico.tempo}"></td>
+                    <td th:text="${servico.tempo_realizacao}"></td>
                     <td><a th:href="@{/admin/editarAssociado/{id}(id=${servico.id})}"><button class="editar">Editar</button></a></td>
                     <td><form th:action="@{/admin/deletarServico/{id}(id=${servico.id})}" method="post" style="display: inline;" class="form-delete">
                         <button type="submit" class="deletar">Excluir</button>

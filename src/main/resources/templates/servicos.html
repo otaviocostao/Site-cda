@@ -26,22 +26,15 @@
         <h1>NOSSOS SERVIÇOS</h1>
     </div>
     <div class="area-servicos">
-        <div class="modelo-servicos">
+        <div class="modelo-servicos" th:each="servico : ${servicos}">
             <div class="area-txt">
                 <div class="titulo-sevico">
-                    <h3>DECLARAÇÃO DE IMPOSTO SOBRE A PROPRIEDADE TERRITORIAL RURAL (DITR)</h3>
+                    <h3 th:text="${servico.titulo}"></h3>
                 </div>
                 <div class="texto-servico">
-                    <p>O que é: A Declaração de Imposto sobre a Propriedade Territorial Rural (DITR) é uma obrigação tributária anual, de caráter federal, que recai sobre proprietários, titulares do domínio útil ou possuidores a qualquer título de imóvel rural. A DITR tem como objetivo apurar o valor do Imposto sobre a Propriedade Territorial Rural (ITR), que incide sobre as propriedades rurais em todo o território nacional.
-
-                        A declaração é realizada por meio de um sistema eletrônico disponibilizado pela Receita Federal, onde o contribuinte informa os dados do imóvel rural, como área total, áreas de preservação permanente, reserva legal, e outras áreas não tributáveis. A apuração do imposto considera também o grau de utilização da terra, conforme o potencial produtivo da área.
-
-                        Os contribuintes têm a responsabilidade de manter as informações sobre suas propriedades atualizadas e corretas, evitando a aplicação de multas por inconsistências ou omissões na declaração. Além disso, o recolhimento do ITR pode ter reflexos na regularidade fundiária da propriedade, sendo necessário para diversos processos, como o registro de compra e venda de imóveis rurais.
-                        O cumprimento da DITR é essencial para a gestão fiscal das propriedades rurais e contribui para o planejamento e desenvolvimento sustentável dessas áreas.
-
-                    </p>
-                    <p>Tempo para realização: Não estimado</p>
-                    <p>Custo: R$ 20,00</p>
+                    <p th:text="${servico.texto}"</p>
+                    <p>Tempo para realização: <span th:text="${servico.tempo_realizacao}"></span> </p>
+                    <p>Custo: R$<span th:text="${servico.valor}"></span> </p>
                 </div>
 
             </div>
