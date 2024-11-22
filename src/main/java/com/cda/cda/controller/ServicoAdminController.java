@@ -5,10 +5,7 @@ import com.cda.cda.service.ServicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,6 +32,14 @@ public class ServicoAdminController {
     @PostMapping("/salvarServico")
     public String salvarServico(@ModelAttribute("servico") Servico servico){
         servicoService.saveServico(servico);
+        return "redirect:/admin/novoServico";
+    }
+
+
+    @PostMapping("/deletarServico/{id}")
+    public String deletarServico(@PathVariable("id") Long id){
+        servicoService.deleteServico(id);
+
         return "redirect:/admin/listaServicos";
     }
 }

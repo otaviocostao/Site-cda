@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_listar_noticias.css}">
+    <title>Lista de serviços</title>
+</head>
+<body>
+    <div id="content-main">
+        <div  id="header-pag"><a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back"></a><h2>LISTA DE SERVIÇOS</h2></div>
+        <div id="area-table">
+            <table class="striped-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Texto</th>
+                        <th>Valor</th>
+                        <th>Tempo</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="servico, iterStat : ${servicos}">
+                    <td th:text="${servico.id}"></td>
+                    <td th:text="${servico.titulo}"></td>
+                    <td th:text="${servico.texto}"></td>
+                    <td th:text="${servico.valor}"></td>
+                    <td th:text="${servico.tempo}"></td>
+                    <td><a th:href="@{/admin/editarAssociado/{id}(id=${servico.id})}"><button class="editar">Editar</button></a></td>
+                    <td><form th:action="@{/admin/deletarServico/{id}(id=${servico.id})}" method="post" style="display: inline;" class="form-delete">
+                        <button type="submit" class="deletar">Excluir</button>
+                    </form></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
