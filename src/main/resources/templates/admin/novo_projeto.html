@@ -16,18 +16,19 @@
             <h2>PUBLICAR PROJETO</h2>
         </div>
         <div id="area-formulario">
-            <form method="post" th:action="@{/publicarProjeto}">
+            <form method="post" th:action="@{/admin/salvarProjeto}" th:object="${projeto}" enctype="multipart/form-data">
                 <div class="text-field">
                     <label for="titulo-proj">Título:</label>
-                    <input type="text" name="titulo-not" id="titulo-proj" class="campo-grande">
+                    <input type="text" name="titulo-not" id="titulo-proj" class="campo-grande" th:field="*{titulo}">
                 </div>
                 <div class="text-field">
                     <label for="texto-proj">Texto:</label>
-                    <input type="text" name="texto-not" id="texto-proj" class="campo-grande">
+                    <input type="text" name="texto-not" id="texto-proj" class="campo-grande" th:field="*{texto}">
                 </div>
                 <div class="text-field">
-                    <p>Imagem: </p>
-                    <button id="btn-add">Adicionar imagem</button>
+                    <label for="imagem">Imagem:</label>
+                    <input type="file" name="imagem" id="imagem" accept="image/*" required>
+
                 </div>
                 <div id="area-btn-salvar">
                     <button id="btn-salvar">Publicar</button>

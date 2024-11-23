@@ -26,7 +26,6 @@ body{
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -34,12 +33,13 @@ body{
 .noticias-container{
     width:100%;
     display:flex;
-    align-items:start;
+    flex-direction:column;
+    align-items:center;
     justify-content:center;
 }
 
 .modelo-noticias{
-    width: 70%;
+    width: 68vw;
     height: 100%;
     display: flex;
     justify-content: space-between;

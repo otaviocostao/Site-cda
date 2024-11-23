@@ -119,7 +119,7 @@ body{
     background-color: #34a155;
 }
 
-#btn-add{
+.btn-add{
     width: 150px;
     height: 30px;
     padding: 10px;
@@ -136,6 +136,6 @@ body{
     margin-left: 5px;
 }
 
-#btn-add:hover{
+.btn-add:hover{
     background-color: #34a155;
 }
