@@ -50,78 +50,42 @@
             <h1>NOSSOS PROJETOS</h1>
         </div>
         <div id="area-projetos">
-            <div class="card-projeto">
-                <img th:src="@{/img/maos-unidas.jpg}" alt="" class="img-projeto">
-                <h3>PROJETO MÃOS UNIDAS</h3>
+            <div class="card-projeto" th:each="projeto : ${projetosRecentes}">
+                <img th:src="@{${projeto.imagem_url}}" alt="" class="img-projeto">
+                <h3 th:text="${projeto.titulo}"></h3>
                 <div class="area-btn-ver-projeto">
-                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
-                </div>
-            </div>
-            <div class="card-projeto">
-                <img th:src="@{/img/copa rural.jpg}" alt="" class="img-projeto">
-                <h3>PROJETO COPA RURAL</h3>
-                <div class="area-btn-ver-projeto">
-                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
-                </div>
-            </div>
-            <div class="card-projeto">
-                <img th:src="@{/img/multiroes de saude.jpg}" alt="" class="img-projeto">
-                <h3>MUTIRÕES DE SAÚDE</h3>
-                <div class="area-btn-ver-projeto">
-                    <a href="#" class="btn-ver-projeto">VER PROJETO</a>
+                    <a  class="btn-ver-projeto">VER PROJETO</a>
                 </div>
             </div>
         </div>
         <div id="area-btn-todos-projetos">
-            <a href=""><button id="btn-todos-projetos">Ver todos os projetos</button></a>
+            <a th:href="@{/noticias}"><button id="btn-todos-projetos">Ver todos os projetos</button></a>
         </div>
     </section>
+
     <section id="container-noticias">
         <div class="titulo-pagina">
             <h1>NOTÍCIAS RECENTES</h1>
         </div>
         <div id="area-noticias">
-            <div id="noticia-maior">
-                <img th:src="@{/img/noticia-copa-rural.jpg}" alt="" id="img-noticia-maior">
+            <div id="noticia-maior" th:if="${noticiasRecentes.size() > 0}">
+                <img th:src="@{${noticiasRecentes[0].imagem_url}}" alt="" id="img-noticia-maior">
                 <div id="titulo-noticia-maior">
-                    <h3>Município de Araci é escolhido para sediar os jogos da Copa Baiana de Futebol 2024.</h3>
+                    <h3 th:text="${noticiasRecentes[0].titulo}"></h3>
                 </div>
             </div>
-            <div id="group-noticias">
-                <div class="noticias-menores">
-                    <div class="noticia-menor">
-                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
-
-                        </div>
-                    </div>
-                    <div class="noticia-menor">
-                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="noticias-menores">
-                    <div class="noticia-menor">
-                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
-
-                        </div>
-                    </div>
-                    <div class="noticia-menor">
-                        <img th:src="@{/img/noticia-menor1.jpg}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3>Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h3>
-                        </div>
+            <div id="group-noticias" th:if="${noticiasRecentes != null}">
+                <div class="noticia-menor" th:each="noticia : ${noticiasRecentes}">
+                    <img th:src="@{${noticia.imagem_url}}" alt="" class="img-noticia-menor">
+                    <div class="texto-noticia-menor">
+                        <h3 th:text="${noticia.titulo}"></h3>
                     </div>
                 </div>
             </div>
 
         </div>
     </section>
+
 </div>
 <footer class="rodape">
     <div id="content-rodape">

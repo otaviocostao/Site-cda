@@ -17,7 +17,7 @@ public class NoticiaController {
 
     @GetMapping("/noticias")
     public String listaNoticias(Model model){
-        List<Noticia> noticias = noticiaService.findAll();
+        List<Noticia> noticias = noticiaService.find5NoticiasRecentes();
         model.addAttribute("noticias", noticias);
         return "noticias";
     }

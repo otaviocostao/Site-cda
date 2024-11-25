@@ -54,17 +54,20 @@ body{
 }
 
 .img-noticia{
-    width: 30%;
+    width: 22vw;
+    height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #898989;
     margin-bottom: 8px;
     margin-top: 8px;
+    overflow:hidden;
 }
 
 .img-noticia>img{
     width: 100%;
+    object-fit: cover;
 }
 
 .area-btn-ler{

@@ -72,6 +72,11 @@ form{
     font-size: 11pt;
     cursor: pointer;
     margin-top: 7px;
+    text-align:center;
+}
+
+a{
+    text-decoration:none;
 }
 
 #btn-logar:hover{

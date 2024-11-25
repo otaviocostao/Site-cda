@@ -38,4 +38,8 @@ public class NoticiaService {
     public void deleteNoticia(Long id){
         noticiaRepository.deleteById(id);
     }
+
+    public List<Noticia> find5NoticiasRecentes() {
+        return noticiaRepository.find5NoticiasRecentes();
+    }
 }

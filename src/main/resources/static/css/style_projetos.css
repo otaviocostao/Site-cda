@@ -34,14 +34,14 @@ body{
 .modelo-projetos{
     width: 70%;
     height: auto;
-    border-top: 1px solid #595959;
-    border-bottom: 1px solid #595959;
+    border-bottom: 1px solid #797979;
+    margin-bottom: 25px;
 }
 
 .img-projeto{
-    width: 100%;
-    height: 30%;
-    overflow: hidden;
+    width: 70vw;
+    height: 25vw;
+    object-fit: cover;
 }
 
 .img-projeto>img{

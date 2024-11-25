@@ -37,4 +37,8 @@ public class ProjetoService {
     public void deleteProjeto(Long id){
         projetoRepository.deleteById(id);
     }
+
+    public List<Projeto> find3ProjetosRecentes() {
+        return projetoRepository.find3ProjetosRecentes();
+    }
 }

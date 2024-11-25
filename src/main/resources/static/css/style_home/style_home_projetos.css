@@ -27,6 +27,8 @@
 
 .img-projeto{
     width: 23vw;
+    height: 50vh;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -41,6 +43,7 @@
     text-decoration: none;
     padding: 5px;
     width: 130px;
+    cursor:pointer;
 }
 
 .btn-ver-projeto:hover{
@@ -54,6 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 #btn-todos-projetos{

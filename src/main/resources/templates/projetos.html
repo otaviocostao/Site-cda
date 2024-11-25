@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/style_projetos.css}">
+    <title>CDA - Projetos</title>
+</head>
+<header >
+    <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
+    <div id="botoes-navbar">
+        <a href="home.html" class="btn-navbar">Início</a>
+        <a href="projetos.html" class="btn-navbar">Projetos</a>
+        <a href="noticias.html" class="btn-navbar">Notícias</a>
+        <a href="servicos.html" class="btn-navbar">Serviços</a>
+        <a href="afiliados.html" class="btn-navbar">Afiliados</a>
+        <a href="apoiadores.html" class="btn-navbar">Apoiadores</a>
+    </div>
+</header>
+<body>
+<div id="container-main">
+    <div id="titulo-pag">
+        <h1>NOSSOS PROJETOS</h1>
+    </div>
+    <div class="area-projetos">
+        <div class="modelo-projetos" th:each="projeto : ${projetos}">
+            <div class="titulo-projeto">
+                <h3 th:text="${projeto.titulo}"></h3>
+            </div>
+            <div class="img-projeto">
+                <img th:src="@{${projeto.imagem_url}}" alt="">
+            </div>
+            <div class="texto-projeto">
+                <p th:text="${projeto.texto}">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
