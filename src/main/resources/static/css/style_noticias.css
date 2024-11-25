@@ -7,6 +7,10 @@ body{
     box-sizing: border-box;
 }
 
+a{
+    text-decoration:none;
+    color:#393939;
+}
 
 #container-main{
     width: 100vw;
@@ -46,6 +50,10 @@ body{
     border-top: 1px solid #898989;
     border-bottom: 1px solid #898989;
     margin-bottom:10px;
+}
+
+.titulo-noticia>a:hover{
+    color:#696969;
 }
 
 .area-txt{

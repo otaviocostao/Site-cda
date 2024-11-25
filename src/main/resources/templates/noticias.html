@@ -34,7 +34,9 @@
                     </div>
                     <div class="area-txt">
                         <div class="titulo-noticia">
-                            <h3 th:text="${noticia.titulo}">Título da Notícia</h3>
+                            <a th:href="@{/noticia/{id}(id=${noticia.id})}">
+                                <h3 th:text="${noticia.titulo}">Título da Notícia</h3>
+                            </a>
                         </div>
                         <div class="texto-noticia">
                             <p id="texto-noticia-[[${noticia.id}]]" th:text="${noticia.texto}">Resumo da notícia...</p>
