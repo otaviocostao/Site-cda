@@ -1,0 +1,53 @@
+.carrosel{	
+	height: 50%;
+	display: flex;
+	cursor: grab;
+}
+
+.carousel-container {
+	overflow: hidden;
+	padding: 85px;
+	gap: 80px;
+	transform: scaleX(1.15);
+	display: flex;
+	background-color: #EEF5FF;
+	width: 100%;
+	z-index: 1;
+	flex-wrap: nowrap;
+}
+
+.blur-esquerdo,.blur-direito{
+	width: 10%;
+	height: auto;	
+	z-index: 2;
+}
+
+.blur-esquerdo{
+	background-image: linear-gradient(90deg, #FFFFFF, transparent)
+}
+
+.blur-direito{
+	background-image: linear-gradient(270deg, #FFFFFF, transparent)
+}
+
+/* Estilo para as imagens */
+.carousel-item {
+	min-width: 100px;
+	max-width: 300px;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	pointer-events: none;
+}
+
+.carousel-item img {
+	width: 100%;
+	object-fit: fill;
+	pointer-events: none;
+}

@@ -6,9 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/style_navbar.css}">
-    <link rel="stylesheet" th:href="@{/css/style_projetos.css}">
-    <link rel="icon" type="image/png" th:href="@{/img/LOGO CDA 2.png}" />
-    <title>CDA - Projetos</title>
+    <link rel="stylesheet" th:href="@{/css/style_noticia.css}">
+    <title th:text="${noticia.titulo}"></title>
 </head>
 <header >
     <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
@@ -22,24 +21,22 @@
     </div>
 </header>
 <body>
-<div id="container-main">
-    <div id="titulo-pag">
-        <h1>NOSSOS PROJETOS</h1>
-    </div>
-    <div class="area-projetos">
-        <div class="modelo-projetos" th:each="projeto : ${projetos}">
-            <div class="titulo-projeto">
-                <h3 th:text="${projeto.titulo}"></h3>
+    <div id="container-main">
+        <div class="modelo-noticia">
+            <div class="titulo-noticia">
+                <h2 th:text="${noticia.titulo}">Deputado Federal Daniel Almeida disponibiliza cerca de 2 milhões de recursos em emendas em benefícios para Araci.</h2>
             </div>
-            <div class="img-projeto">
-                <img th:src="@{${projeto.imagem_url}}" alt="">
+            <div class="info-publicacao">
+                <p> <strong> Publicado por: </strong> <span th:text="${noticia.autor}">autor</span></p>
+                <p> <strong>Data de publicação:</strong> <span th:text="${noticia.data_publicacao}">data</span> </p>
             </div>
-            <div class="texto-projeto">
-                <p th:text="${projeto.texto}">
-                </p>
+            <div class="imagem-noticia">
+                <img th:src="@{${noticia.imagem_url}}" alt="Imagem da Notícia">
+            </div>
+            <div class="texto-noticia">
+                <p th:text="${noticia.texto}"></p>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

@@ -19,6 +19,6 @@ public class AssociadoPublicController {
     public String associados(Model model){
         List<Associado> associados = associadoService.findAll();
         model.addAttribute("associados", associados);
-        return "/admin/lista_associados";
+        return "/afiliados";
     }
 }

@@ -1,0 +1,100 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/style_home/style_home_body.css}">
+    <link rel="stylesheet" th:href="@{/css/style_apoiadores.css}">
+    <link rel="icon" type="image/png" th:href="@{/img/LOGO CDA 2.png}" />
+    <title>CDA - Apoiadores</title>
+</head>
+<header >
+    <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
+    <div id="botoes-navbar">
+        <a th:href="@{/home}" class="btn-navbar">Início</a>
+        <a th:href="@{/projetos}" class="btn-navbar">Projetos</a>
+        <a th:href="@{/noticias}" class="btn-navbar">Notícias</a>
+        <a th:href="@{/servicos}" class="btn-navbar">Serviços</a>
+        <a th:href="@{/associados}" class="btn-navbar">Afiliados</a>
+        <a th:href="@{/apoiadores}" class="btn-navbar">Apoiadores</a>
+    </div>
+</header>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center;">Nossos Apoiadores</h2>
+</div>
+<div class="carrosel">
+    <div class="blur-esquerdo">
+    </div>
+    <div id="carrosel" class="carousel-container">
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO-araci.png}" alt="logo de Araci">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO-EDUCACAO_-_novo.png}" alt="logo educação">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO-SAUDE.png}" alt="logo saude">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO-seagri.png}" alt="seagri">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO-social-novo.png}" alt="logo social">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO_ESPORTE.png}" alt="logo esporte">
+        </div>
+        <div class="carousel-item">
+            <img th:src="@{/img/logos/LOGO_SDE.png}" alt="lodo sde">
+        </div>
+    </div>
+    <div class="blur-direito">
+    </div>
+</div>
+<script>
+    const scrollContainer = document.getElementById('carrosel')
+
+    scrollContainer.addEventListener('wheel', function(event) {
+        // PEGA O CARAIO DO MOUSE PRA MEXER
+        event.preventDefault();
+        scrollContainer.scrollLeft += event.deltaY;
+    });
+
+    const carousel = document.getElementById('carrosel');
+
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    carousel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    carousel.classList.add('dragging');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+    isDragging = false;
+    carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mouseup', () => {
+    isDragging = false;
+    carousel.classList.remove('dragging');
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2; // Velocidade do movimento
+    carousel.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
+</body>
+</html>

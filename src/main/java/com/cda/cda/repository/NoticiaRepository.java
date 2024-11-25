@@ -13,4 +13,7 @@ public interface NoticiaRepository extends JpaRepository<Noticia, Long> {
     @Query(value = "SELECT * FROM noticia ORDER BY id DESC LIMIT 3", nativeQuery = true)
     List<Noticia> find5NoticiasRecentes();
 
+    @Query(value = "SELECT * FROM noticia ORDER BY id DESC", nativeQuery = true)
+    List<Noticia> findNoticiasDesc();
+
 }

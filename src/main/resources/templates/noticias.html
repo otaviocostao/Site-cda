@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/style_navbar.css}">
     <link rel="stylesheet" th:href="@{/css/style_noticias.css}">
+    <link rel="icon" type="image/png" th:href="@{/img/LOGO CDA 2.png}" />
     <title>CDA - Notícias</title>
 </head>
 <header >
-    <img src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
+    <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
     <div id="botoes-navbar">
         <a th:href="@{/home}" class="btn-navbar">Início</a>
-        <a href="#" class="btn-navbar">Projetos</a>
-        <a href="#" class="btn-navbar">Notícias</a>
-        <a href="#" class="btn-navbar">Serviços</a>
-        <a href="#" class="btn-navbar">Afiliados</a>
-        <a href="#" class="btn-navbar">Apoiadores</a>
+        <a th:href="@{/projetos}" class="btn-navbar">Projetos</a>
+        <a th:href="@{/noticias}" class="btn-navbar">Notícias</a>
+        <a th:href="@{/servicos}" class="btn-navbar">Serviços</a>
+        <a th:href="@{/associados}" class="btn-navbar">Afiliados</a>
+        <a th:href="@{/apoiadores}" class="btn-navbar">Apoiadores</a>
     </div>
 </header>
 <body>
@@ -36,10 +37,10 @@
                             <h3 th:text="${noticia.titulo}">Título da Notícia</h3>
                         </div>
                         <div class="texto-noticia">
-                            <p th:text="${noticia.texto}">Resumo da notícia...</p>
+                            <p id="texto-noticia-[[${noticia.id}]]" th:text="${noticia.texto}">Resumo da notícia...</p>
                         </div>
                         <div class="area-btn-ler">
-                            <a th:href="@{/noticia/{id}(id=${id})}" class="btn-ler">
+                            <a th:href="@{/noticia/{id}(id=${noticia.id})}" class="btn-ler">
                                 <button>Ler mais</button>
                             </a>
                         </div>
@@ -50,4 +51,13 @@
         </div>
     </div>
 </body>
+<script>
+    // Limitar o texto para os primeiros 100 caracteres
+    document.querySelectorAll('.texto-noticia p').forEach(function(p) {
+        var texto = p.textContent;
+        if (texto.length > 650) {
+            p.textContent = texto.substring(0, 650) + '...';
+        }
+    });
+</script>
 </html>

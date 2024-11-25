@@ -28,4 +28,9 @@ public class PublicStaticPagesController {
         model.addAttribute("projetosRecentes", projetoService.find3ProjetosRecentes());
         return "home"; // Nome do template HTML
     }
+
+    @GetMapping("/apoiadores")
+    public String apoiadores(){
+        return "apoiadores";
+    }
 }

@@ -11,17 +11,18 @@
     <link rel="stylesheet" th:href="@{/css/style_home/style_home_projetos.css}">
     <link rel="stylesheet" th:href="@{/css/style_home/style_home_noticias.css}">
     <link rel="stylesheet" th:href="@{/css/style_rodape.css}">
+    <link rel="icon" type="image/png" th:href="@{/img/LOGO CDA 2.png}" />
     <title>CDA - Ínicio</title>
 </head>
 <header >
     <img th:src="@{/img/LOGO CDA 2.png}" alt="" id="logo-cda">
     <div id="botoes-navbar">
         <a th:href="@{/home}" class="btn-navbar">Início</a>
-        <a href="#" class="btn-navbar">Projetos</a>
+        <a th:href="@{/projetos}" class="btn-navbar">Projetos</a>
         <a th:href="@{/noticias}" class="btn-navbar">Notícias</a>
-        <a href="#" class="btn-navbar">Serviços</a>
-        <a href="#" class="btn-navbar">Afiliados</a>
-        <a href="#" class="btn-navbar">Apoiadores</a>
+        <a th:href="@{/servicos}" class="btn-navbar">Serviços</a>
+        <a th:href="@{/associados}" class="btn-navbar">Afiliados</a>
+        <a th:href="@{/apoiadores}" class="btn-navbar">Apoiadores</a>
     </div>
 </header>
 <body>
@@ -54,12 +55,12 @@
                 <img th:src="@{${projeto.imagem_url}}" alt="" class="img-projeto">
                 <h3 th:text="${projeto.titulo}"></h3>
                 <div class="area-btn-ver-projeto">
-                    <a  class="btn-ver-projeto">VER PROJETO</a>
+                    <a th:href="@{/projetos}" class="btn-ver-projeto">VER PROJETO</a>
                 </div>
             </div>
         </div>
         <div id="area-btn-todos-projetos">
-            <a th:href="@{/noticias}"><button id="btn-todos-projetos">Ver todos os projetos</button></a>
+            <a th:href="@{/projetos}"><button id="btn-todos-projetos">Ver todos os projetos</button></a>
         </div>
     </section>
 

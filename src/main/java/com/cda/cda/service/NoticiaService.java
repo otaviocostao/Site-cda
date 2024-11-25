@@ -42,4 +42,7 @@ public class NoticiaService {
     public List<Noticia> find5NoticiasRecentes() {
         return noticiaRepository.find5NoticiasRecentes();
     }
+    public List<Noticia> findNoticiasDesc() {
+        return noticiaRepository.findNoticiasDesc();
+    }
 }

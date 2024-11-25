@@ -71,7 +71,7 @@ public class NoticiaAdminController {
 
     @PostMapping("/deletarNoticia/{id}")
     public String deletarNoticia(@PathVariable("id") Long id){
-        Noticia noticia = noticiaService.getById(id).orElseThrow(() -> new RuntimeException("Noticia não encontrada com ID: " + id));;
+        Noticia noticia = noticiaService.getById(id).orElseThrow(() -> new RuntimeException("Noticia não encontrada com ID: " + id));
 
         if(noticia != null){
             String imagem_url = noticia.getImagemUrl();
