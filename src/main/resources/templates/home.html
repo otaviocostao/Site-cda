@@ -71,37 +71,48 @@
         <div id="area-noticias">
             <div id="noticia-maior" th:if="${noticiasRecentes.size() > 0}">
                 <img th:src="@{${noticiasRecentes[0].imagem_url}}" alt="" id="img-noticia-maior">
-                <div id="titulo-noticia-maior">
-                    <h3 th:text="${noticiasRecentes[0].titulo}"></h3>
-                </div>
+                <a th:href="@{/noticia/{id}(id=${noticiasRecentes[0].id})}">
+                    <div id="titulo-noticia-maior">
+                        <h3 th:text="${noticiasRecentes[0].titulo}"></h3>
+                    </div>
+                </a>
             </div>
             <div id="group-noticias" th:if="${noticiasRecentes != null}">
                 <div class="noticias-menores" th:if="${noticiasRecentes.size() > 1}">
                     <div class="noticia-menor" >
                         <img th:src="@{${noticiasRecentes[1].imagem_url}}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3 th:text="${noticiasRecentes[1].titulo}"></h3>
-                        </div>
+                        <a th:href="@{/noticia/{id}(id=${noticiasRecentes[1].id})}">
+                            <div class="texto-noticia-menor">
+                                <h3 th:text="${noticiasRecentes[1].titulo}"></h3>
+                            </div>
+                        </a>
+
                     </div>
                     <div class="noticia-menor" th:if="${noticiasRecentes.size() > 2}">
                         <img th:src="@{${noticiasRecentes[2].imagem_url}}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3 th:text="${noticiasRecentes[2].titulo}"></h3>
-                        </div>
+                        <a th:href="@{/noticia/{id}(id=${noticiasRecentes[2].id})}">
+                            <div class="texto-noticia-menor">
+                                <h3 th:text="${noticiasRecentes[2].titulo}"></h3>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="noticias-menores" th:if="${noticiasRecentes.size() > 3}">
                     <div class="noticia-menor">
                         <img th:src="@{${noticiasRecentes[3].imagem_url}}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3 th:text="${noticiasRecentes[3].titulo}"></h3>
-                        </div>
+                        <a th:href="@{/noticia/{id}(id=${noticiasRecentes[3].id})}">
+                            <div class="texto-noticia-menor">
+                                <h3 th:text="${noticiasRecentes[3].titulo}"></h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="noticia-menor" th:if="${noticiasRecentes.size() > 4}">
                         <img th:src="@{${noticiasRecentes[4].imagem_url}}" alt="" class="img-noticia-menor">
-                        <div class="texto-noticia-menor">
-                            <h3 th:text="${noticiasRecentes[4].titulo}"></h3>
-                        </div>
+                        <a th:href="@{/noticia/{id}(id=${noticiasRecentes[4].id})}">
+                            <div class="texto-noticia-menor">
+                                <h3 th:text="${noticiasRecentes[4].titulo}"></h3>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
