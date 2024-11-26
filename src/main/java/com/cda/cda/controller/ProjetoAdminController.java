@@ -90,4 +90,18 @@ public class ProjetoAdminController {
         return "redirect:/admin/listaProjetos";
     }
 
+
+    @GetMapping("/editarProjeto/{id}")
+    public String editarProjeto(@PathVariable("id") Long id, Model model){
+        Projeto projeto = projetoService.getById(id).orElseThrow(() -> new RuntimeException("Projeto não encontrado com ID: " + id));
+        model.addAttribute("projeto", projeto);
+        return "admin/editar_projeto";
+    }
+
+    @PostMapping("/salvarEdicaoProjeto")
+    public String salvarEdicaoProjeto(@ModelAttribute("projeto") Projeto projeto){
+        projetoService.saveProjeto(projeto);
+        return "redirect:/admin/listaProjetos";
+    }
+
 }

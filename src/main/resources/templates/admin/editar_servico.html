@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style_admin/style_novo_associado.css}">
+    <title>Editar serviço</title>
+</head>
+<body>
+    <div id="content-main">
+        <div  id="header-pag"><a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back"></a><h2>NOVO SERVIÇO</h2></div>
+        <div id="area-formulario">
+            <form th:action="@{/admin/salvarEdicaoServico}" th:object="${servico}" method="post">
+                <input type="hidden" name="id" th:field="${servico.id}">
+                <div class="text-field">
+                    <label for="titulo">Título:</label>
+                    <input type="text" name="titulo" id="titulo" class="campo-grande" th:field="*{titulo}">
+                </div>
+                <div class="text-field">
+                    <label for="texto">Texto:</label>
+                    <input type="text" name="texto" id="texto" class="campo-grande" th:field="*{texto}">
+                </div>
+                <div class="text-field">
+                    <label for="valor">Valor:</label>
+                    <input type="text" name="valor" id="valor" class="campo-pequeno" th:field="*{valor}">
+                </div>
+                <div class="text-field">
+                    <label for="tempo_realização">Tempo para realização:</label>
+                    <input type="text" name="tempo_realização" id="tempo_realização" class ="campo-pequeno" th:field="*{tempo_realizacao}">
+                </div>
+
+                <div id="area-btn-salvar">
+                    <button id="btn-salvar">Salvar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

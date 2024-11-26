@@ -6,16 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/style_admin/style_nova_noticia.css}">
-    <title>Publicar notícia</title>
+    <title>Editar notícia</title>
 </head>
 <body>
     <div id="content-main">
         <div id="header-pag">
-            <a th:href="@{/admin/home}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back" enctype="multipart/form-data"></a>
-            <h2>PUBLICAR NOTÍCIA</h2>
+            <a th:href="@{/admin/listaNoticias}"><img th:src="@{/img/icons/Back.png}" alt="" id="btn-back" enctype="multipart/form-data"></a>
+            <h2>EDITAR NOTÍCIA</h2>
         </div>
         <div id="area-formulario">
-            <form th:action="@{/admin/salvarNoticia}" th:object="${noticia}" method="post" enctype="multipart/form-data">
+            <form th:action="@{/admin/salvarEdicaoNoticia}" th:object="${noticia}" method="post">
+
+                <input type="hidden" name="id" th:field="${noticia.id}">
+
                 <div class="text-field">
                     <label for="titulo-not">Título:</label>
                     <input type="text" name="titulo-not" id="titulo-not" th:field="*{titulo}">
@@ -28,11 +31,13 @@
 
                 <div class="text-field">
                     <label for="texto-not">Texto:</label>
-                    <textarea name="texto-not" id="texto-not" th:field="*{texto}" rows="25" cols="50"></textarea>
+                    <input type="text" name="texto-not" id="texto-not" th:field="*{texto}">
                 </div>
 
-                <label for="imagem">Imagem:</label>
-                <input type="file" name="imagem" id="imagem" accept="image/*" required>
+                <input type="hidden" name="data_publicacao" th:field="${noticia.data_publicacao}">
+
+                <input type="hidden" name="imagem_url" th:field="${noticia.imagem_url}">
+
 
                 <div id="area-btn-salvar">
                     <button id="btn-salvar">Publicar</button>

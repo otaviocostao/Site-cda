@@ -31,7 +31,7 @@
                 <p> <strong>Data de publicação:</strong> <span th:text="${noticia.data_publicacao}">data</span> </p>
             </div>
             <div class="imagem-noticia">
-                <img th:src="@{${noticia.imagem_url}}" alt="Imagem da Notícia">
+                <img th:src="@{'/' + ${noticia.imagem_url}}" alt="Imagem da Notícia">
             </div>
             <div class="texto-noticia">
                 <p th:text="${noticia.texto}"></p>

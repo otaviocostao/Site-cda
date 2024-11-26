@@ -90,4 +90,18 @@ public class NoticiaAdminController {
         return "redirect:/admin/listaNoticias";
     }
 
+
+    @GetMapping("/editarNoticia/{id}")
+    public String editarNoticia(@PathVariable("id") Long id, Model model){
+        Noticia noticia = noticiaService.getById(id).orElseThrow(() -> new RuntimeException("Noticia não encontrada com ID: " + id));
+        model.addAttribute("noticia", noticia);
+        return "admin/editar_noticia";
+    }
+
+    @PostMapping("/salvarEdicaoNoticia")
+    public String salvarEdicaoNoticia(@ModelAttribute("noticia") Noticia noticia){
+        noticiaService.saveNoticia(noticia);
+        return "redirect:/admin/listaNoticias";
+    }
+
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" th:href="@{/css/style_admin/style_nova_noticia.css}">
-    <title>Publicar projeto</title>
+    <title>Editar projeto</title>
 </head>
 <body>
     <div id="content-main">
@@ -13,25 +13,24 @@
             <a th:href="@{/admin/home}">
                 <img th:src="@{/img/icons/Back.png}" alt="" id="btn-back">
             </a>
-            <h2>PUBLICAR PROJETO</h2>
+            <h2>EDITAR PROJETO</h2>
         </div>
         <div id="area-formulario">
-            <form method="post" th:action="@{/admin/salvarProjeto}" th:object="${projeto}" enctype="multipart/form-data">
+            <form method="post" th:action="@{/admin/salvarEdicaoProjeto}" th:object="${projeto}">
                 <div class="text-field">
+
+                    <input type="hidden" name="id" th:field="${projeto.id}">
+
                     <label for="titulo-proj">Título:</label>
                     <input type="text" name="titulo-not" id="titulo-proj" class="campo-grande" th:field="*{titulo}">
                 </div>
                 <div class="text-field">
-                    <label for="texto-not">Texto:</label>
-                    <textarea name="texto-not" id="texto-not" th:field="*{texto}" rows="25" cols="50"></textarea>
+                    <label for="texto-proj">Texto:</label>
+                    <input type="text" name="texto-not" id="texto-proj" class="campo-grande" th:field="*{texto}">
                 </div>
-                <div class="text-field">
-                    <label for="imagem">Imagem:</label>
-                    <input type="file" name="imagem" id="imagem" accept="image/*" required>
-
-                </div>
+                <input type="hidden" name="imagem_url" th:field="${projeto.imagem_url}">
                 <div id="area-btn-salvar">
-                    <button id="btn-salvar">Publicar</button>
+                    <button id="btn-salvar">Salvar</button>
                 </div>
             </form>
         </div>

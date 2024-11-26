@@ -20,7 +20,7 @@ body{
 .modelo-noticia{
     width: 65%;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: start;
     flex-direction: column;
 }
@@ -50,12 +50,14 @@ body{
 }
 
 .imagem-noticia{
-    width: 100%;
+    width: 60vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow:hidden;
 }
 
 .imagem-noticia>img{
-    width: 40vw;
+    width: 35vw;
+    object-fit: cover;
 }

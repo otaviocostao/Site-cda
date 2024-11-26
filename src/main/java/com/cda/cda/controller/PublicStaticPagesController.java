@@ -20,6 +20,11 @@ public class PublicStaticPagesController {
     @Autowired
     private NoticiaService noticiaService;
 
+    @GetMapping("/")
+    public String redirectToHome() {
+        return "redirect:/home";
+    }
+
     @GetMapping("/home")
     public String home(Model model) {
 

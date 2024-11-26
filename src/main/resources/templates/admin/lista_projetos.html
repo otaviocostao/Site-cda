@@ -28,13 +28,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Exemplo de iteração com Thymeleaf -->
                     <tr th:each="projeto : ${projetos}">
                         <td th:text="${projeto.id}"></td>
                         <td th:text="${projeto.titulo}"></td>
                         <td th:text="${projeto.texto}"></td>
                         <td><img th:src="@{${projeto.imagem_url}}"></td>
-                        <td><a th:href="@{/editar_projeto/{id}(id=${projeto.id})}"><button class="editar">Editar</button></a></td>
+                        <td><a th:href="@{/editarProjeto/{id}(id=${projeto.id})}"><button class="editar">Editar</button></a></td>
                         <td><button type="submit" class="deletar" th:onclick="'deletarProjeto(' + ${projeto.id} + ') '">Deletar</button></td>
                     </tr>
                 </tbody>

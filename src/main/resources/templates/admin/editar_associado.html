@@ -10,7 +10,7 @@
 <div id="content-main">
 
     <div id="header-pag">
-        <a th:href="@{/admin/home}">
+        <a th:href="@{/admin/listaAssociados}">
             <img th:src="@{/img/icons/Back.png}" alt="Voltar" id="btn-back">
         </a>
         <h2>EDITAR ASSOCIADO</h2>
@@ -21,7 +21,6 @@
 
             <input type="hidden" name="id" th:field="${associado.id}">
 
-            <!-- Campos de Edição -->
             <div class="text-field">
                 <label for="cnpj">CNPJ:</label>
                 <input type="text" name="cnpj" id="cnpj" class="campo-pequeno" th:field="*{associado.cnpj}" required>

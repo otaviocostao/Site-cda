@@ -76,38 +76,58 @@
                 </div>
             </div>
             <div id="group-noticias" th:if="${noticiasRecentes != null}">
-                <div class="noticia-menor" th:each="noticia : ${noticiasRecentes}">
-                    <img th:src="@{${noticia.imagem_url}}" alt="" class="img-noticia-menor">
-                    <div class="texto-noticia-menor">
-                        <h3 th:text="${noticia.titulo}"></h3>
+                <div class="noticias-menores" th:if="${noticiasRecentes.size() > 1}">
+                    <div class="noticia-menor" >
+                        <img th:src="@{${noticiasRecentes[1].imagem_url}}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3 th:text="${noticiasRecentes[1].titulo}"></h3>
+                        </div>
+                    </div>
+                    <div class="noticia-menor" th:if="${noticiasRecentes.size() > 2}">
+                        <img th:src="@{${noticiasRecentes[2].imagem_url}}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3 th:text="${noticiasRecentes[2].titulo}"></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="noticias-menores" th:if="${noticiasRecentes.size() > 3}">
+                    <div class="noticia-menor">
+                        <img th:src="@{${noticiasRecentes[3].imagem_url}}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3 th:text="${noticiasRecentes[3].titulo}"></h3>
+                        </div>
+                    </div>
+                    <div class="noticia-menor" th:if="${noticiasRecentes.size() > 4}">
+                        <img th:src="@{${noticiasRecentes[4].imagem_url}}" alt="" class="img-noticia-menor">
+                        <div class="texto-noticia-menor">
+                            <h3 th:text="${noticiasRecentes[4].titulo}"></h3>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
 </div>
-<footer class="rodape">
-    <div id="content-rodape">
-        <div id="contatos-rodape">
-            <h4>Nosso contatos:</h4>
-            <p>toinhocda@gmail.com</p>
-            <p>(75) - 9.9921-6165</p>
+    <footer class="rodape">
+        <div id="content-rodape">
+            <div id="contatos-rodape">
+                <h4>Nosso contatos:</h4>
+                <p>toinhocda@gmail.com</p>
+                <p>(75) - 9.9921-6165</p>
+            </div>
+            <div id="endereco-rodape">
+                <h4>Nosso endereço:</h4>
+                <p>Praça do Tanque da <br>Nação, 230, Centro.<br> Araci-BA</p>
+            </div>
+            <div id="redes-rodape">
+                <h4>Nossas redes:</h4>
+                <a href="">WhatsApp</a><br>
+                <a href="">Instagram</a>
+            </div>
         </div>
-        <div id="endereco-rodape">
-            <h4>Nosso endereço:</h4>
-            <p>Praça do Tanque da <br>Nação, 230, Centro.<br> Araci-BA</p>
+        <div id="direitos-rodape">
+            © 2024 Central de Desenvolvimento de Associações de Araci-Ba CNPJ: 04231.921/0001-16 - Todos os direitos reservados.
         </div>
-        <div id="redes-rodape">
-            <h4>Nossas redes:</h4>
-            <a href="">WhatsApp</a><br>
-            <a href="">Instagram</a>
-        </div>
-    </div>
-    <div id="direitos-rodape">
-        © 2024 Central de Desenvolvimento de Associações de Araci-Ba CNPJ: 04231.921/0001-16 - Todos os direitos reservados.
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

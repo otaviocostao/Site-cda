@@ -33,7 +33,7 @@
                         <td th:text="${noticia.titulo}"></td>
                         <td th:text="${noticia.autor}"></td>
                         <td th:text="${noticia.data_publicacao}"></td>
-                        <td><a><button class="editar">Editar</button></a></td>
+                        <td><a th:href="@{/admin/editarNoticia/{id}(id=${noticia.id})}"><button class="editar">Editar</button></a></td>
                         <td><form th:action="@{/admin/deletarNoticia/{id}(id=${noticia.id})}" method="post" style="display: inline;" class="form-delete">
                             <button type="submit" class="deletar">Excluir</button>
                         </form></td>

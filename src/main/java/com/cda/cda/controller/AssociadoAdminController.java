@@ -37,7 +37,7 @@ public class AssociadoAdminController {
 
 
     @PostMapping("/deletarAssociado/{id}")
-    public String deletarAssociado(@PathVariable("id") Long id){
+    public String deletarAssociado(@PathVariable("id") Long id) {
         associadoService.deleteAssociado(id);
 
         return "redirect:/admin/listaAssociados";
